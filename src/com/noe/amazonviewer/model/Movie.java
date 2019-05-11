@@ -11,4 +11,19 @@ public class Movie {
 	public boolean viewed;
 	public int timeViewed;
 
+	
+	public Movie(String title, String genre, String creator, int duration, Short year){
+		super();
+		this.title=title;
+		this.genre=genre;
+		this.creator=creator;
+		this.duration=duration;
+		this.year=year;
+	}
+	public Movie(String title, String genre, Short year){
+		super();
+		this.title=title;
+		this.genre=genre;
+		this.year=year;
+	}
 }
