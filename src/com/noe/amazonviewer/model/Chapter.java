@@ -1,7 +1,7 @@
 package com.noe.amazonviewer.model;
 
-public class Chapter extends Movie{
-	
+public class Chapter extends Movie {
+
 	private int id;
 	private int sessionNumber;
 
@@ -16,5 +16,10 @@ public class Chapter extends Movie{
 
 	public void setSessionNumber(int sessionNumber) {
 		this.sessionNumber = sessionNumber;
+	}
+
+	@Override
+	public int getId() {
+		return this.getId();
 	}
 }
