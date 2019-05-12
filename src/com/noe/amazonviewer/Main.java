@@ -5,9 +5,12 @@ import com.noe.amazonviewer.model.Movie;
 public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Movie movie = new Movie("Coco", "Animation",(short)2017);
-		movie.showData();
-		showmenu();
+		// Movie movie = new Movie("Coco", "Animation",(short)2017);
+		// movie.showData();
+		// showmenu();
+		Movie movie = new Movie("Coco", "Animation", "", 120, (short)2017);
+		System.out.println(movie.toString());
+		//la direccion de memmoria getClass().getName() + "@" + Integer.toHexString(hashCode());
 	}
 
 	public static void showmenu(){

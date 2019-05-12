@@ -16,26 +16,20 @@ public class Movie extends Film{
 		// System.out.println("Year"+year);
 	}
 
-	/**
-	 * @return the id
-	 */
 	public int getId() {
 		return id;
 	}
 
-
-	/**
-	 * @return the timeViewed
-	 */
 	public int getTimeViewed() {
 		return timeViewed;
 	}
 
-	/**
-	 * @param timeViewed the timeViewed to set
-	 */
 	public void setTimeViewed(int timeViewed) {
 		this.timeViewed = timeViewed;
+	}
+	@Override
+	public String toString() {
+		return "Hola este es el objeto Movie";
 	}
 	
 }
