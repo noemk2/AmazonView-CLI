@@ -29,7 +29,10 @@ public class Movie extends Film{
 	}
 	@Override
 	public String toString() {
-		return "Hola este es el objeto Movie";
+		return "\n Title:"+getTitle()+
+			   "\n Genero:"+getGenre()+
+			   "\n Creator:"+getCreator()+
+			   "\n Duration:"+getDuration();
 	}
 	
 }
