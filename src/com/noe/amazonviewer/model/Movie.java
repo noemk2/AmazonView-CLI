@@ -2,7 +2,7 @@ package com.noe.amazonviewer.model;
 
 public class Movie {
 	
-	public int id;
+	private int id;
 	private String title;
 	private String genre;
 	private String creator;
@@ -32,6 +32,60 @@ public class Movie {
 		System.out.println("Genre"+genre);
 		System.out.println("Year"+year);
 	}
-
-
+	// title
+	public String getTitle(){
+		return title;
+	}
+	public void setTitle(String title){
+		this.title = title;
+	}
+	// id
+	public int getId(){
+		return id;
+	}
+	public void setId(int id){
+		this.id = id;
+	}
+	// genre
+	public String getGenre(){
+		return genre;
+	}
+	public void setGenre(String genre){
+		this.genre = genre;
+	}
+	// creator
+	public String getCreator(){
+		return creator;
+	}
+	public void setCreator(String creator){
+		this.creator = creator;
+	}
+	// duration
+	public int getDuration(){
+		return duration;
+	}
+	public void setDuration(int duration){
+		this.duration = duration;
+	}
+	// year
+	public short getYear(){
+		return year;
+	}
+	public void setYear(short year){
+		this.year = year;
+	}
+	// viewed
+	public boolean getViewed(){
+		return viewed;
+	}
+	public void setViewed(boolean viewed){
+		this.viewed = viewed;
+	}
+	// timeViewed
+	public int getTimeViewed(){
+		return timeViewed;
+	}
+	public void setTimeViewed(int timeViewed){
+		this.timeViewed = timeViewed;
+	}
 }
