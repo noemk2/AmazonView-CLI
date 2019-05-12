@@ -22,4 +22,13 @@ public class Chapter extends Movie {
 	public int getId() {
 		return this.getId();
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return  "\n :: CHAPTER ::" + 
+				"\n Title: " + getTitle() +
+				"\n Year: " + getYear() + 
+				"\n Creator: " + getCreator() +
+				"\n Duration: " + getDuration();
+	}
 }

@@ -29,10 +29,13 @@ public class Movie extends Film{
 	}
 	@Override
 	public String toString() {
-		return "\n Title:"+getTitle()+
-			   "\n Genero:"+getGenre()+
-			   "\n Creator:"+getCreator()+
-			   "\n Duration:"+getDuration();
+		// TODO Auto-generated method stub
+		return  "\n :: MOVIE ::" + 
+				"\n Title: " + getTitle() +
+				"\n Genero: " + getGenre() + 
+				"\n Year: " + getYear() + 
+				"\n Creator: " + getCreator() +
+				"\n Duration: " + getDuration();
 	}
 	
 }
