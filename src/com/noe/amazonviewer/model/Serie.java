@@ -32,15 +32,5 @@ public class Serie extends Film{
 	public int getId() {
 		return id;
 	}
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return  "\n :: SERIE ::" + 
-				"\n Title: " + getTitle() +
-				"\n Genero: " + getGenre() + 
-				"\n Year: " + getYear() + 
-				"\n Creator: " + getCreator() +
-				"\n Duration: " + getDuration();
-	}
-
+	
 }

@@ -1,6 +1,6 @@
 package com.noe.amazonviewer.model;
 
-public class Book extends Publication{
+public class Book extends Publication implements IVisualizable{ 
 
 	private int id;	
 	private String isbn;
@@ -51,5 +51,18 @@ public class Book extends Publication{
 			detailBook += "\t" + getAuthors()[i];
 		}
 		return  detailBook;
+	}
+	@Override
+	public Date starToSee(Date dateI) {
+		return dateI;
+	}
+	
+	@Override
+	public Date stopToSee(Date dateI,Date dateF) {
+		if(dateF.getSeconds() > getI.getSeconds()){
+			setTimeReaded(dateF.getSeconds() - dateI.getSeconds());
+		}else{
+			setTimeReaded(0);
+		}
 	}
 }
