@@ -91,7 +91,13 @@ public class Film{
 	 * @return the viewed
 	 */
 	public boolean isViewed() {
-		return viewed;
+		String visto ="";
+		if (viewed == true) {
+			visto= "Si";
+		}else{
+			visto= "No";
+		}
+		return visto;
 	}
 
 	/**

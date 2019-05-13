@@ -24,7 +24,6 @@ public class Chapter extends Movie {
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		return  "\n :: CHAPTER ::" + 
 				"\n Title: " + getTitle() +
 				"\n Year: " + getYear() + 

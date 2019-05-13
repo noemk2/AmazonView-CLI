@@ -41,7 +41,6 @@ public class Book extends Publication implements IVisualizable{
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
 		String detailBook = "\n :: BOOK ::" + 
 							"\n Title: " + getTitle() +
 							"\n Editorial: " + getEditorial() + 

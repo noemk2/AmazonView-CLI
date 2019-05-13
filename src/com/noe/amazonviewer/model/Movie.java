@@ -1,5 +1,6 @@
 package com.noe.amazonviewer.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Movie extends Film implements IVisualizable{ 
@@ -31,7 +32,7 @@ public class Movie extends Film implements IVisualizable{
 	}
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
+	
 		return  "\n :: MOVIE ::" + 
 				"\n Title: " + getTitle() +
 				"\n Genero: " + getGenre() + 
@@ -50,5 +51,14 @@ public class Movie extends Film implements IVisualizable{
 		}else{
 			setTimeViewed(0);
 		}
+	}
+
+	public static ArrayList<Movie> makeMoviesList() {
+		ArrayList<Movie> movies = new ArrayList();
+		for(int i = 0; i<= 5; i++){
+			movies.add(new Movie("Movie "+i, "Genero "+i, "Creator "+i, 120+i, (short)(2017+i)));
+
+		}
+		return movies;
 	}
 }
