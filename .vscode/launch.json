@@ -11,7 +11,7 @@
 
         {
             "type": "java",
-            "name": "Debug (Launch) with Arguments Prompt",
+            "name": "prompt",
             "request": "launch",
             "mainClass": "",
             "args": "${command:SpecifyProgramArgs}"

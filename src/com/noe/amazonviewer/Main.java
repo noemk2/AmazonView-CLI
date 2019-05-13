@@ -2,9 +2,7 @@ package com.noe.amazonviewer;
 
 import java.util.ArrayList;
 import java.util.Date;
-// import com.noe.amazonviewer.model.Movie;
-
-import com.noe.amazonviewer.model.Movie;
+import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
@@ -27,11 +25,13 @@ public class Main {
 			System.out.println("0. Exit");
 			//Leer la respuesta del usuario
 						//Leer la respuesta del usuario
-						int response = 0;
+						Scanner sc = new Scanner(System.in);
+						// haciendo un parceo
+						int response = Integer.valueOf(sc.nextLine());
+						// validar si el usuario le pasa una letra
 						switch (response) {
 							case 0:
 								//salir
-								
 								break;
 							case 1:
 								showMovies();
@@ -75,6 +75,28 @@ public class Main {
 			System.out.println("0. Back to menu");
 			System.out.println();
 			
+			// leer respuesta del usuario
+			Scanner sc = new Scanner(System.in);
+			int response = Integer.valueOf(sc.nextLine());
+
+			if (response == 0) {
+				showmenu();
+			}
+
+			Movie movieSelected = movie.get(response-1);
+			movieSelected.setViewed(true);
+			Date dateI = movieSelected.starToSee(new Date());
+
+			for (int i = 0; i < 10000; i++) {
+				System.out.println("....");
+				
+			}
+			// terminar de verla
+			movieSelected.stopToSee(dateI, new Date());
+			System.out.println();
+			System.out.println("Viste: "+movieSelected);
+			System.out.println("Por: "+movieSelected.getTimeViewed()+ " milisegundo");
+
 		}while (exit != 0);
 
 	}

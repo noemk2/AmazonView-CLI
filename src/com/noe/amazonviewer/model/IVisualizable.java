@@ -1,9 +1,7 @@
 package com.noe.amazonviewer.model;
-
-import java.sql.Date;
-
+import java.util.Date;
 public interface IVisualizable{
-    starToSee(Date dataI);
-    stopToSee(Date dataI, Date dataF );
+    Date starToSee(Date dataI);
+    void stopToSee(Date dataI, Date dataF );
 
 }

@@ -2,7 +2,7 @@ package com.noe.amazonviewer.model;
 
 public class Chapter extends Movie {
 
-	private int id;
+	// private int id;
 	private int sessionNumber;
 
 	public Chapter(String title, String genre, String creator, int duration, short year, int sessionNumber) {

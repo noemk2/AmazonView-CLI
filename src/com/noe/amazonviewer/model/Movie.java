@@ -41,13 +41,13 @@ public class Movie extends Film implements IVisualizable{
 				"\n Duration: " + getDuration();
 	}
 	@Override
-	public String starToSee(Date dateI) {
+	public Date starToSee(Date dateI) {
 		return dateI;
 	}
 	@Override
-	public String stopToSee(Date dateI,Date dateF) {
-		if(dateF.getSeconds() > getI.getSeconds()){
-			setTimeViewed(dateF.getSeconds() - dateI.getSeconds());
+	public void stopToSee(Date dateI,Date dateF) {
+		if(dateF.getTime() > getI.getTime()){
+			setTimeViewed((int)(dateF.getTime() - dateI.getTime()));
 		}else{
 			setTimeViewed(0);
 		}
