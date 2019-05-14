@@ -1,5 +1,7 @@
 package com.noe.amazonviewer.model;
 
+import java.util.Date;
+
 public class Book extends Publication implements IVisualizable{ 
 
 	private int id;	
@@ -7,12 +9,12 @@ public class Book extends Publication implements IVisualizable{
 	private boolean readed;
 	private int timeReaded;
 		
-	public Book(String title, Date editionDate, String editorial, String isbn){
-		super(title, editionDate, editorial);
+	public Book(String title, Date edititionDate, String editorial, String isbn){
+		super(title, edititionDate, editorial);
 		this.isbn=isbn;
 	}
 
-	public intgetId(){
+	public int getId(){
 		return id;
 	}
 
@@ -20,23 +22,23 @@ public class Book extends Publication implements IVisualizable{
 		return isbn;
 	}
 
-	public voidsetIsbn(String isbn){
+	public void setIsbn(String isbn){
 		this.isbn = isbn;
 	}
 
-	public booleanisReaded(){
+	public boolean isReaded(){
 		return readed;
 	}
 
-	public voidsetReaded(boolean readed){
+	public void setReaded(boolean readed){
 		this.readed = readed;
 	}
 
-	public intgetTimeReaded(){
+	public int getTimeReaded(){
 		return timeReaded;
 	}
 
-	public voidsetTimeReaded(int timeReaded){
+	public void setTimeReaded(int timeReaded){
 		this.timeReaded = timeReaded;
 	}
 	@Override
@@ -52,13 +54,13 @@ public class Book extends Publication implements IVisualizable{
 		return  detailBook;
 	}
 	@Override
-	public Date starToSee(Date dateI) {
+	public Date startToSee(Date dateI) {
 		return dateI;
 	}
 	
 	@Override
-	public Date stopToSee(Date dateI,Date dateF) {
-		if(dateF.getSeconds() > getI.getSeconds()){
+	public void stopToSee(Date dateI,Date dateF) {
+		if(dateF.getSeconds() > dateI.getSeconds()){
 			setTimeReaded(dateF.getSeconds() - dateI.getSeconds());
 		}else{
 			setTimeReaded(0);

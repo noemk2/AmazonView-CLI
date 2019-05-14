@@ -1,13 +1,13 @@
 package com.noe.amazonviewer.model;
-
+import java.util.Date;
 public class Magazine extends Publication{
-	privateint id;		
+	private int id;		
 			
 	public Magazine(String title, Date editionDate, String editorial){
 		super(title, editionDate, editorial);
 	}
 
-	publicintgetId(){
+	public int getId(){
 		return id;
 	}
 	@Override
