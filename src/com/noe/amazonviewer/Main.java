@@ -1,5 +1,5 @@
 package com.noe.amazonviewer;
-
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
@@ -7,6 +7,8 @@ import java.util.Scanner;
 import com.noe.amazonviewer.model.Chapter;
 import com.noe.amazonviewer.model.Movie;
 import com.noe.amazonviewer.model.Serie;
+import com.noe.makereport.Report;
+
 
 public class Main {
 	public static void main(String[] args) {
@@ -66,10 +68,9 @@ public class Main {
 			
 		}while(exit != 0);
 	}
-
+	static ArrayList<Movie> movies =Movie.makeMoviesList();
 	public static void showMovies(){
 		int exit = 0;
-		ArrayList<Movie> movies =Movie.makeMoviesList();
 		do {
 			System.out.println();
 			System.out.println(":: Movies ::");
@@ -87,7 +88,7 @@ public class Main {
 			if (response == 0) {
 				showMenu();
 			}
-
+			if (response > 0) {
 			Movie movieSelected = movies.get(response-1);
 			movieSelected.setViewed(true);
 			Date dateI = movieSelected.startToSee(new Date());
@@ -101,7 +102,7 @@ public class Main {
 			System.out.println();
 			System.out.println("Viste: "+movieSelected);
 			System.out.println("Por: "+movieSelected.getTimeViewed()+ " milisegundo");
-
+		}
 		}while (exit != 0);
 
 	}
@@ -153,7 +154,7 @@ public class Main {
 			if(response == 0) {
 				showSeries();
 			}
-			
+			if (response > 0) {
 			Chapter chapterSelected = chaptersOfSerieSelected.get(response-1);
 			chapterSelected.setViewed(true);
 			Date dateI = chapterSelected.startToSee(new Date());
@@ -167,7 +168,7 @@ public class Main {
 			System.out.println();
 			System.out.println("Viste: " + chapterSelected);
 			System.out.println("Por: " + chapterSelected.getTimeViewed() + " milisegundos");
-			
+			}
 		} while (exit != 0);
 	}
 	public static void showBooks(){
@@ -187,9 +188,42 @@ public class Main {
 		} while (exit != 0);	
 	}
 	public static void makeReport(){
-		
+		Report report = new Report();
+		report.setNameFile("reporte");
+		report.setTitle(":::VISTOS:::");
+		report.setExtension("txt");
+		String contentReport = "";
+
+		for (Movie movie : movies) {
+			if (movie.getIsViewed()) {
+				contentReport += movie.toString() +"\n";
+
+			}
+		}
+
+		report.setContent(contentReport);
+		report.makeReport();
+
+
 	}	
 	public static void makeReport(Date date){
-		
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		String dateString = df.format(date);
+		Report report = new Report();
+
+		report.setNameFile("reporte"+dateString);
+		report.setExtension("txt");
+		report.setTitle(":: VISTOS ::");
+		String contentReport = "";
+
+		for (Movie movie : movies) {
+			if (movie.getIsViewed()) {
+				contentReport += movie.toString() +"\n";
+
+			}
+		}
+
+		report.setContent(contentReport);
+		report.makeReport();
 	}	
 }
